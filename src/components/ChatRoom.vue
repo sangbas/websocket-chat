@@ -102,7 +102,7 @@
       .messages{
         height: 80vh;
         overflow-y: scroll;
-        background: url(@/assets/background.png) no-repeat center;
+        background: url(@/assets/background.jpg) no-repeat center;
         background-size: cover;
         
         
