@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <h1>Sangbas chat - <span class="connection_ready" v-if="connectionReady">Connection ready!</span></h1>
+        <h1>Sangbas chat - 
+            <span class="connection_ready" v-if="connectionReady">Connection ready!</span>
+            <span v-else>Connecting ...</span>
+        </h1>
         
         <div class="messages" id="messages">
           <div class="message-container">
@@ -37,7 +40,7 @@
       initChat(): void {
         //ask for a nickname
         if(this.nickname == "") this.nickname = prompt("Enter a nickname:") || "";
-        var websocketUrl = process.env.VUE_APP_WEBSOCKET_URL;
+        var websocketUrl = "ws://18.141.137.138:8080/ws";
         this.websocket = new WebSocket(websocketUrl);
         this.websocket.onopen    = this.onSocketOpen;
         this.websocket.onmessage = this.onSocketMessage;
