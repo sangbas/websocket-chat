@@ -37,7 +37,7 @@
       initChat(): void {
         //ask for a nickname
         if(this.nickname == "") this.nickname = prompt("Enter a nickname:") || "";
-        var websocketUrl = process.env.WEBSOCKET_URL;
+        var websocketUrl = process.env.VUE_APP_WEBSOCKET_URL;
         this.websocket = new WebSocket(websocketUrl);
         this.websocket.onopen    = this.onSocketOpen;
         this.websocket.onmessage = this.onSocketMessage;

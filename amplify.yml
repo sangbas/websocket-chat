@@ -6,7 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
-        - echo "WEBSOCKET_URL=$WEBSOCKET_URL" >> .env 
+        - echo "VUE_APP_WEBSOCKET_URL=$VUE_APP_WEBSOCKET_URL" >> .env 
         - npm run build
   artifacts:
     baseDirectory: dist
